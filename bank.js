@@ -9,6 +9,7 @@ document.getElementById('btn-1').addEventListener('click',function(){
    let total = parseFloat(newDeposite) + parseFloat(showDeposite);
    if(deposite.value < 1 || deposite.value === ''){
     alert('select correct amount');
+    deposite.value ='';
     return;
    }
    else
