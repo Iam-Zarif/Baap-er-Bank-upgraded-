@@ -3,14 +3,23 @@ document.getElementById('btn-1').addEventListener('click',function(){
     let deposite = document.getElementById("deposite");
     let depositeAmount = document.getElementById("deposite-balance");
    let newDeposite = deposite.value;
+  
    let showDeposite = depositeAmount.innerText;
 
    let total = parseFloat(newDeposite) + parseFloat(showDeposite);
-   depositeAmount.innerText = total;
+   if(deposite.value < 1 || deposite.value === ''){
+    alert('select correct amount');
+    return;
+   }
+   else
+   {
+    depositeAmount.innerText = total;
+  }
 // 
    let totalBalance = document.getElementById("total-balance");
    let balanceValue = totalBalance.innerText;
    let balance = parseFloat(balanceValue)+ parseFloat(newDeposite);
+   
    totalBalance.innerText = balance;
     deposite.value = '';
 })
@@ -31,14 +40,19 @@ document.getElementById('btn-2').addEventListener('click',function(){
     
 // 
    let totalAmount = document.getElementById("total-balance");
+   
    let balanceValue = totalAmount.innerText;
    
    let balance = parseFloat(balanceValue) - parseFloat(withdrawValue);
    
-
-   if (total > balanceValue) {
+   if(withdraw.value < 1){
+    alert("Are you fool Beb");
+   }
+   
+   else if (total > balanceValue) {
      alert("you are Out of Money bro");
-   } else {
+   } 
+   else {
      withdrawAmount.innerText = total;
      totalAmount.innerText = balance;
    }

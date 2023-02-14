@@ -4,8 +4,11 @@ document.getElementById('btn-1').addEventListener('click',function(){
 
     let password = document.getElementById('password');
    console.log(password.value);
+if(email.value === '' || password.value === ''){
+    alert('please fulfill your email or Password');
+}
 
-   if(email.value === 'zarif@gmail.com' && password.value === 'secret'){
+   else if(email.value === 'zarif@gmail.com' && password.value === 'secret'){
     window.open("./bank.html");
    }
    else{
